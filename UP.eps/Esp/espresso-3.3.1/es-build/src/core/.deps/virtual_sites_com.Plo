@@ -1,0 +1,16 @@
+virtual_sites_com.lo: ../../../src/core/virtual_sites_com.cpp \
+ /usr/include/stdc-predef.h ../../../src/core/virtual_sites_com.hpp \
+ ../../../src/core/config.hpp ../../src/acconfig.hpp myconfig-final.hpp \
+ config-features.hpp
+
+/usr/include/stdc-predef.h:
+
+../../../src/core/virtual_sites_com.hpp:
+
+../../../src/core/config.hpp:
+
+../../src/acconfig.hpp:
+
+myconfig-final.hpp:
+
+config-features.hpp:

@@ -1,0 +1,3 @@
+mol load psf line_chain_s1.psf pdb line_chain_s1.pdb
+rotate stop
+imd connect linux-tc3z 10000

@@ -1,0 +1,532 @@
+forces.lo: ../../../src/core/forces.cpp /usr/include/stdc-predef.h \
+ ../../../src/core/p3m_gpu.hpp ../../../src/core/maggs.hpp \
+ ../../../src/core/config.hpp ../../src/acconfig.hpp myconfig-final.hpp \
+ config-features.hpp ../../../src/core/forces_inline.hpp \
+ ../../../src/core/magnetic_non_p3m_methods.hpp \
+ ../../../src/core/utils.hpp /usr/include/c++/4.8/cmath \
+ /usr/include/c++/4.8/x86_64-suse-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
+ /usr/include/c++/4.8/x86_64-suse-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/c++/4.8/x86_64-suse-linux/bits/cpu_defines.h \
+ /usr/include/c++/4.8/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8/ext/type_traits.h /usr/include/math.h \
+ /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+ /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
+ /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
+ /usr/include/c++/4.8/cstdio /usr/include/stdio.h \
+ /usr/lib64/gcc/x86_64-suse-linux/4.8/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib64/gcc/x86_64-suse-linux/4.8/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/c++/4.8/cstdlib \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/byteswap-16.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/c++/4.8/cstring /usr/include/string.h \
+ ../../../src/core/debug.hpp ../../../src/core/errorhandling.hpp \
+ ../../../src/core/mdlc_correction.hpp ../../../src/core/constraint.hpp \
+ ../../../src/core/particle_data.hpp \
+ ../../../src/core/interaction_data.hpp \
+ ../../../src/core/EspressoSystemInterface.hpp \
+ ../../../src/core/SystemInterface.hpp ../../../src/core/Vector.hpp \
+ /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
+ /usr/include/c++/4.8/bits/stl_relops.h \
+ /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
+ /usr/include/c++/4.8/bits/concept_check.h \
+ /usr/include/c++/4.8/bits/stl_algobase.h \
+ /usr/include/c++/4.8/bits/functexcept.h \
+ /usr/include/c++/4.8/bits/exception_defines.h \
+ /usr/include/c++/4.8/ext/numeric_traits.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8/debug/debug.h \
+ /usr/include/c++/4.8/bits/stl_iterator.h \
+ /usr/include/c++/4.8/bits/stl_algo.h \
+ /usr/include/c++/4.8/bits/algorithmfwd.h \
+ /usr/include/c++/4.8/bits/stl_heap.h \
+ /usr/include/c++/4.8/bits/stl_tempbuf.h \
+ /usr/include/c++/4.8/bits/stl_construct.h /usr/include/c++/4.8/new \
+ /usr/include/c++/4.8/exception \
+ /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8/ext/alloc_traits.h \
+ /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/c++/4.8/x86_64-suse-linux/bits/c++allocator.h \
+ /usr/include/c++/4.8/ext/new_allocator.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_uninitialized.h \
+ /usr/include/c++/4.8/bits/stl_vector.h \
+ /usr/include/c++/4.8/bits/stl_bvector.h \
+ /usr/include/c++/4.8/bits/range_access.h \
+ /usr/include/c++/4.8/bits/vector.tcc \
+ ../../../src/core/cuda_interface.hpp ../../../src/core/forces.hpp \
+ ../../../src/core/iccp3m.hpp /usr/include/c++/4.8/ctime \
+ /usr/include/bits/timex.h ../../../src/core/p3m.hpp \
+ ../../../src/core/p3m-common.hpp ../../../src/core/mmm1d.hpp \
+ ../../../src/core/mmm2d.hpp ../../../src/core/domain_decomposition.hpp \
+ ../../../src/core/cells.hpp ../../../src/core/ghosts.hpp \
+ /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
+ /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/verlet.hpp ../../../src/core/integrate.hpp \
+ ../../../src/core/thermostat.hpp ../../../src/core/random.hpp \
+ ../../../src/core/global.hpp ../../../src/core/lb.hpp \
+ ../../../src/core/lattice_inline.hpp ../../../src/core/lattice.hpp \
+ ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
+ /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
+ /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ ../../../src/core/communication.hpp ../../../src/core/topology.hpp \
+ ../../../src/core/lbgpu.hpp ../../../src/core/statistics_observable.hpp \
+ ../../../src/core/dpd.hpp ../../../src/core/virtual_sites.hpp \
+ ../../../src/core/layered.hpp ../../../src/core/nsquare.hpp \
+ ../../../src/core/external_potential.hpp \
+ ../../../src/core/actor/Actor.hpp ../../../src/core/SystemInterface.hpp \
+ ../../../src/core/actor/ActorList.hpp ../../../src/core/actor/Actor.hpp \
+ ../../../src/core/npt.hpp ../../../src/core/p3m-dipolar.hpp \
+ ../../../src/core/lj.hpp ../../../src/core/mol_cut.hpp \
+ ../../../src/core/forcecap.hpp ../../../src/core/ljgen.hpp \
+ ../../../src/core/steppot.hpp ../../../src/core/hertzian.hpp \
+ ../../../src/core/gaussian.hpp ../../../src/core/bmhtf-nacl.hpp \
+ ../../../src/core/buckingham.hpp ../../../src/core/soft_sphere.hpp \
+ ../../../src/core/hat.hpp ../../../src/core/tab.hpp \
+ ../../../src/core/dihedral.hpp ../../../src/core/overlap.hpp \
+ ../../../src/core/ljcos.hpp ../../../src/core/ljcos2.hpp \
+ ../../../src/core/ljangle.hpp ../../../src/core/gb.hpp \
+ ../../../src/core/fene.hpp \
+ ../../../src/core/object-in-fluid/stretching_force.hpp \
+ ../../../src/core/utils.hpp ../../../src/core/interaction_data.hpp \
+ ../../../src/core/particle_data.hpp \
+ ../../../src/core/object-in-fluid/stretchlin_force.hpp \
+ ../../../src/core/object-in-fluid/area_force_local.hpp \
+ ../../../src/core/grid.hpp \
+ ../../../src/core/object-in-fluid/area_force_global.hpp \
+ ../../../src/core/cells.hpp ../../../src/core/lb.hpp \
+ ../../../src/core/object-in-fluid/bending_force.hpp \
+ ../../../src/core/object-in-fluid/volume_force.hpp \
+ ../../../src/core/harmonic.hpp ../../../src/core/subt_lj.hpp \
+ ../../../src/core/angle_harmonic.hpp ../../../src/core/angle_cosine.hpp \
+ ../../../src/core/angle_cossquare.hpp ../../../src/core/angledist.hpp \
+ ../../../src/core/debye_hueckel.hpp ../../../src/core/endangledist.hpp \
+ ../../../src/core/reaction_field.hpp ../../../src/core/comforce.hpp \
+ ../../../src/core/statistics.hpp ../../../src/core/comfixed.hpp \
+ ../../../src/core/molforces.hpp ../../../src/core/morse.hpp \
+ ../../../src/core/elc.hpp ../../../src/core/collision.hpp \
+ ../../../src/core/virtual_sites_relative.hpp \
+ ../../../src/core/metadynamics.hpp ../../../src/core/angle.hpp
+
+/usr/include/stdc-predef.h:
+
+../../../src/core/p3m_gpu.hpp:
+
+../../../src/core/maggs.hpp:
+
+../../../src/core/config.hpp:
+
+../../src/acconfig.hpp:
+
+myconfig-final.hpp:
+
+config-features.hpp:
+
+../../../src/core/forces_inline.hpp:
+
+../../../src/core/magnetic_non_p3m_methods.hpp:
+
+../../../src/core/utils.hpp:
+
+/usr/include/c++/4.8/cmath:
+
+/usr/include/c++/4.8/x86_64-suse-linux/bits/c++config.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/c++/4.8/x86_64-suse-linux/bits/os_defines.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/c++/4.8/x86_64-suse-linux/bits/cpu_defines.h:
+
+/usr/include/c++/4.8/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.8/ext/type_traits.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/c++/4.8/cstdio:
+
+/usr/include/stdio.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/4.8/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/4.8/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/c++/4.8/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/byteswap-16.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib-bsearch.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/c++/4.8/cstring:
+
+/usr/include/string.h:
+
+../../../src/core/debug.hpp:
+
+../../../src/core/errorhandling.hpp:
+
+../../../src/core/mdlc_correction.hpp:
+
+../../../src/core/constraint.hpp:
+
+../../../src/core/particle_data.hpp:
+
+../../../src/core/interaction_data.hpp:
+
+../../../src/core/EspressoSystemInterface.hpp:
+
+../../../src/core/SystemInterface.hpp:
+
+../../../src/core/Vector.hpp:
+
+/usr/include/c++/4.8/algorithm:
+
+/usr/include/c++/4.8/utility:
+
+/usr/include/c++/4.8/bits/stl_relops.h:
+
+/usr/include/c++/4.8/bits/stl_pair.h:
+
+/usr/include/c++/4.8/bits/move.h:
+
+/usr/include/c++/4.8/bits/concept_check.h:
+
+/usr/include/c++/4.8/bits/stl_algobase.h:
+
+/usr/include/c++/4.8/bits/functexcept.h:
+
+/usr/include/c++/4.8/bits/exception_defines.h:
+
+/usr/include/c++/4.8/ext/numeric_traits.h:
+
+/usr/include/c++/4.8/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.8/debug/debug.h:
+
+/usr/include/c++/4.8/bits/stl_iterator.h:
+
+/usr/include/c++/4.8/bits/stl_algo.h:
+
+/usr/include/c++/4.8/bits/algorithmfwd.h:
+
+/usr/include/c++/4.8/bits/stl_heap.h:
+
+/usr/include/c++/4.8/bits/stl_tempbuf.h:
+
+/usr/include/c++/4.8/bits/stl_construct.h:
+
+/usr/include/c++/4.8/new:
+
+/usr/include/c++/4.8/exception:
+
+/usr/include/c++/4.8/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/4.8/ext/alloc_traits.h:
+
+/usr/include/c++/4.8/bits/allocator.h:
+
+/usr/include/c++/4.8/x86_64-suse-linux/bits/c++allocator.h:
+
+/usr/include/c++/4.8/ext/new_allocator.h:
+
+/usr/include/c++/4.8/bits/memoryfwd.h:
+
+/usr/include/c++/4.8/vector:
+
+/usr/include/c++/4.8/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.8/bits/stl_vector.h:
+
+/usr/include/c++/4.8/bits/stl_bvector.h:
+
+/usr/include/c++/4.8/bits/range_access.h:
+
+/usr/include/c++/4.8/bits/vector.tcc:
+
+../../../src/core/cuda_interface.hpp:
+
+../../../src/core/forces.hpp:
+
+../../../src/core/iccp3m.hpp:
+
+/usr/include/c++/4.8/ctime:
+
+/usr/include/bits/timex.h:
+
+../../../src/core/p3m.hpp:
+
+../../../src/core/p3m-common.hpp:
+
+../../../src/core/mmm1d.hpp:
+
+../../../src/core/mmm2d.hpp:
+
+../../../src/core/domain_decomposition.hpp:
+
+../../../src/core/cells.hpp:
+
+../../../src/core/ghosts.hpp:
+
+/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
+
+/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+
+../../../src/core/verlet.hpp:
+
+../../../src/core/integrate.hpp:
+
+../../../src/core/thermostat.hpp:
+
+../../../src/core/random.hpp:
+
+../../../src/core/global.hpp:
+
+../../../src/core/lb.hpp:
+
+../../../src/core/lattice_inline.hpp:
+
+../../../src/core/lattice.hpp:
+
+../../../src/core/grid.hpp:
+
+/usr/include/c++/4.8/climits:
+
+/usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+../../../src/core/communication.hpp:
+
+../../../src/core/topology.hpp:
+
+../../../src/core/lbgpu.hpp:
+
+../../../src/core/statistics_observable.hpp:
+
+../../../src/core/dpd.hpp:
+
+../../../src/core/virtual_sites.hpp:
+
+../../../src/core/layered.hpp:
+
+../../../src/core/nsquare.hpp:
+
+../../../src/core/external_potential.hpp:
+
+../../../src/core/actor/Actor.hpp:
+
+../../../src/core/SystemInterface.hpp:
+
+../../../src/core/actor/ActorList.hpp:
+
+../../../src/core/actor/Actor.hpp:
+
+../../../src/core/npt.hpp:
+
+../../../src/core/p3m-dipolar.hpp:
+
+../../../src/core/lj.hpp:
+
+../../../src/core/mol_cut.hpp:
+
+../../../src/core/forcecap.hpp:
+
+../../../src/core/ljgen.hpp:
+
+../../../src/core/steppot.hpp:
+
+../../../src/core/hertzian.hpp:
+
+../../../src/core/gaussian.hpp:
+
+../../../src/core/bmhtf-nacl.hpp:
+
+../../../src/core/buckingham.hpp:
+
+../../../src/core/soft_sphere.hpp:
+
+../../../src/core/hat.hpp:
+
+../../../src/core/tab.hpp:
+
+../../../src/core/dihedral.hpp:
+
+../../../src/core/overlap.hpp:
+
+../../../src/core/ljcos.hpp:
+
+../../../src/core/ljcos2.hpp:
+
+../../../src/core/ljangle.hpp:
+
+../../../src/core/gb.hpp:
+
+../../../src/core/fene.hpp:
+
+../../../src/core/object-in-fluid/stretching_force.hpp:
+
+../../../src/core/utils.hpp:
+
+../../../src/core/interaction_data.hpp:
+
+../../../src/core/particle_data.hpp:
+
+../../../src/core/object-in-fluid/stretchlin_force.hpp:
+
+../../../src/core/object-in-fluid/area_force_local.hpp:
+
+../../../src/core/grid.hpp:
+
+../../../src/core/object-in-fluid/area_force_global.hpp:
+
+../../../src/core/cells.hpp:
+
+../../../src/core/lb.hpp:
+
+../../../src/core/object-in-fluid/bending_force.hpp:
+
+../../../src/core/object-in-fluid/volume_force.hpp:
+
+../../../src/core/harmonic.hpp:
+
+../../../src/core/subt_lj.hpp:
+
+../../../src/core/angle_harmonic.hpp:
+
+../../../src/core/angle_cosine.hpp:
+
+../../../src/core/angle_cossquare.hpp:
+
+../../../src/core/angledist.hpp:
+
+../../../src/core/debye_hueckel.hpp:
+
+../../../src/core/endangledist.hpp:
+
+../../../src/core/reaction_field.hpp:
+
+../../../src/core/comforce.hpp:
+
+../../../src/core/statistics.hpp:
+
+../../../src/core/comfixed.hpp:
+
+../../../src/core/molforces.hpp:
+
+../../../src/core/morse.hpp:
+
+../../../src/core/elc.hpp:
+
+../../../src/core/collision.hpp:
+
+../../../src/core/virtual_sites_relative.hpp:
+
+../../../src/core/metadynamics.hpp:
+
+../../../src/core/angle.hpp:
