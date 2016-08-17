@@ -36,8 +36,7 @@ cells_tcl.lo: ../../../src/tcl/cells_tcl.cpp /usr/include/stdc-predef.h \
  /usr/include/tcl.h /usr/include/tclDecls.h /usr/include/tclPlatDecls.h \
  ../../../src/core/domain_decomposition.hpp ../../../src/core/utils.hpp \
  ../../../src/core/cells.hpp ../../../src/core/particle_data.hpp \
- ../../../src/core/ghosts.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/ghosts.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/verlet.hpp ../../../src/core/integrate.hpp \
  ../../../src/core/thermostat.hpp ../../../src/core/random.hpp \
  ../../../src/core/global.hpp ../../../src/core/lb.hpp \
@@ -196,9 +195,7 @@ cells_tcl.lo: ../../../src/tcl/cells_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

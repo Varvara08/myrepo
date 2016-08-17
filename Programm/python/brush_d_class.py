@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# This is program for creating .in file for sfbox and calculating it.
+#This is program for creating .in file for sfbox and calculating it.
 # The brush is consist of linear chain --- simple linear brush (f=2).
 # Ploting by veusz.embeded
 #
@@ -12,7 +11,11 @@ import os
 
 from copy import deepcopy
 from io import StringIO
+###
+os.chdir('/Users/varvara/Documents/veusz.embed')
 import veusz.embed as veusz
+os.chdir('/Users/varvara/mygit/UP.eps/python')
+###
 execfile("functions.py")
 
 import sys
@@ -43,19 +46,17 @@ class brush():
     to_mols = 1/Navogadro/ distance**3/1000 # [mol/l]
 
     def __init__(self):
-        #~ self.chi = chi
-        self.Zbox =  int(self.n*self.f*1.5)
-        self.rD = int( (8*pi*self.lB*self.Navogadro*self.cl*self.to_mols / 0.001)**-0.5 /self.distance)
-        self.fname='brush_d_Z'+str(self.Zbox)+"_n"+str(self.n)+"_f"+str(self.f)+"_val"+str(self.val)+'_cl{:.2e}'.format(self.cl)+'_chi'+str(self.chi)+"_pK"+str(self.pK)+'_sig'+str(self.sigma)
+        self.rD = int( (8*pi*self.lB*self.Navogadro*self.cl*self.to_mols / 0.001)**-0.5 / self.distance)
+        self.Zbox =  int(self.n*2+4*self.rD)
+        self.fname="brush_d_n"+str(self.n)+"_f"+str(self.f)+"_val"+str(self.val)+'_cl{:.2e}'.format(self.cl)+'_chi'+str(self.chi)+"_pK"+str(self.pK)+"_pH"+str(self.pH)+'_sig'+str(self.sigma)
         self.fnamein = self.fname+".in"
         self.fnameout = self.fname+".out"
-#        self.fnamedat = self.fname+".dat" # for two population of brush
 
     def inputfilegen(self):
         self.__init__()
         n = self.n
         chi = self.chi; pK=self.pK; cl = self.cl
-        Zbox = self.Zbox # probably here would put rd, but I'm not sure
+        Zbox = self.Zbox
 
         output=[]
         output.append('')
@@ -77,11 +78,8 @@ class brush():
         freedom  = ['free','pinned', 'free','free']
         #~ freedom  = ['free','pinned','free','free','pinned']
 
-
         for i in range(len(segments)):
             output.append('mon : '+segments[i]+' : freedom : '+freedom[i])
-
-
 
         output.append('mon : water : freedom : free')
 
@@ -99,7 +97,7 @@ class brush():
             output.append('mon : water : state2 : H2O')
             output.append('mon : water : state3 : OH')
             output.append('state : H3O : valence : 1')
-            output.append('state : H3O : alphabulk : 1e-7')
+            output.append('state : H3O : alphabulk : '+str(10**(-self.pH)))
             output.append('state : H2O : valence : 0')
             output.append('state : OH : valence : -1')
             output.append('reaction : auto : equation : 2(H2O)=1(H3O)1(OH)')
@@ -135,7 +133,7 @@ class brush():
 
         output.append('lat : mylat : geometry : flat')
         output.append('lat : mylat : n_layers : '+str(Zbox))
-        output.append('lat : mylat : lambda : 0.166666666666666666666')
+        output.append('lat : mylat : lambda : '+str(num_lambda))
         output.append('lat : mylat : lowerbound : surface')
         output.append('mon : S : freedom : frozen')
         output.append('mon : S : frozen_range : lowerbound')
@@ -167,15 +165,12 @@ class brush():
 
         output.append('mon : poly1 : pinned_range : 1;1')
 
-
-
-
         inputfile = open(mypath+'data/'+self.fnamein,'w')
         #~ print (self.fnamein)
         for i in range(len(output)):
             inputfile.writelines(output[i]+'\n');
         inputfile.close()
-
+        print self.fname
         return output
 
     def sfbox(self):
@@ -195,12 +190,14 @@ class brush():
             infile = self.inputfilegen()
             os.chdir(mypath+'data')
 
-            sfbox_out = os.popen("sfbox "+self.fnamein).read()
+            #sfbox_out = os.popen("sfbox "+self.fnamein).read()
+            sfbox_out = os.popen("wine ~/Documents/IMC/SFBox/sfbox.exe "+self.fnamein).read()
             os.chdir('..')
             sfbox_out = sfbox_out.split("\n")
+            #sfbox_out = sfbox_out.split("\r")
 
             print (sfbox_out[-3])
-            if sfbox_out[-3] == 'Problem solved.':
+	    if sfbox_out[-3][:-1] == 'Problem solved.':
                 self.solved = True
                 self.loadData()
                 print (self.fnamein)
@@ -210,24 +207,24 @@ class brush():
                 print ('Attempt number two')
                 infile = self.inputfilegen()
                 os.chdir(mypath+'data')
-                sfbox_out = os.popen("sfbox "+self.fnamein).read()
+                #sfbox_out = os.popen("sfbox "+self.fnamein).read()
+                sfbox_out = os.popen("wine ~/Documents/IMC/SFBox/sfbox.exe "+self.fnamein).read()
                 os.chdir('..')
                 sfbox_out = sfbox_out.split("\n")
+                #sfbox_out = sfbox_out.split("\r")
                 print (sfbox_out[-3])
                 if sfbox_out[-3] == 'Problem solved.':
                     self.solved = True
                     self.loadData()
 
                 else:
-                    self.solved = False
-                    os.remove(mypath+'data/'+self.fnameout)
+                    #self.solved = False
+                    #os.remove(mypath+'data/'+self.fnameout)
+		    print "Mine Got!"
                 print (self.fnamein)
 
             print
         return self.solved
-
-
-
 
     def loadData(self):
         global datadict, datastring, i, data, value
@@ -235,11 +232,9 @@ class brush():
         datafname = mypath+'data/'+self.fnameout
         datafile = open(datafname, 'rb');
         data = datafile.read(); datafile.close()
-        data = data.split('\n')
+        data = data.split('\n')  ### DATA FROM LINUX
+        #data = data.split('\r') ### DATA FROM MAC/WINE
         data = data[:-3]
-
-
-
 
         keys = []
         values = []
@@ -249,10 +244,10 @@ class brush():
             if(data[i]=="system delimiter" or len(data[i])==0):
                 i = i+1;
                 continue;
-            elif data[i].split(' : ')[-1] == 'profile' or data[i].split(' : ')[-1] == 'vector':
+	    elif data[i][1:].split(' : ')[-1] == 'profile' or data[i][1:].split(' : ')[-1] == 'vector':
 
                 #~ key = data[i]
-                key = data[i][:data[i].rindex(':')-1]
+		key = data[i][:data[i].rindex(':')-1]  ### key = data[i][:data[i].rindex(':')-1] --- DATA FROM LINUX //// key = data[i][1:][:data[i].rindex(':')-2] --- DATA FROM MAC/WINE
                 i = i+1
                 value = []
                 while True:
@@ -263,17 +258,48 @@ class brush():
                 datadict[key] = value
 
             else:
-                key = data[i][:data[i].rindex(':')-1]
+		key = data[i][:data[i].rindex(':')-1]  ### key = data[i][:data[i].rindex(':')-1] --- DATA FROM LINUX //// key = data[i][1:][:data[i].rindex(':')-2] --- DATA FROM MAC/WINE
                 try: value = float(data[i].split(' : ')[-1])
-                except ValueError: value = data[i].split(' : ')[-1]
+		except ValueError: value = data[i][1:].split(' : ')[-1]
                 datadict[key] = value
                 i = i+1
 
         self.datadict = datadict
         return datadict
 
+    def mylambda(self):
+        global lambdadictbp, lambdadictne, ze, zbp
+        zbp = array(self.datadict['mol : brush : phi-polyB'])
+        ze = array(self.datadict['mol : brush : phi-polyE'])
+        lambdafind(zbp,ze)
+        extendedStarFind(zbp,ze)
+        varpar(vary_parameter)
+        varparfirst(vary_parameter)
+        return lambdadictbp, lambdadictne, ze, zbp
+
+    def chainInPotention(self):
+        if (len(array(self.datadict['mol : brush : phi']))) < (chain_length+5):
+          phi_list = self.datadict['mol : brush : phi']
+          for k in range(0,chain_length):
+            phi_list.append(0.0)
+        else:
+          phi_list = self.datadict['mol : brush : phi']
+        phi = array(phi_list)
+        potention = -log(1-phi)
+        w = exp(-potention)
+        calc_gt_gf(w)
+        ###FILE.DAT
+        with open('my_gt_gf.dat','w') as the_file:
+         the_file.write(gt)
+        ###
+        #calc_phi_pe(w)
+
     def plotProfile(self, profile_name = 'sys : noname : potential'):
         global g, xy, y_axis
+        line_color=my_line_color()
+        #line_type=my_line_type()
+        point_color_bp='#'+3*(hex(int((1-my_onefraction_bp[0])*255))[-2:])
+        point_color_ne='#'+3*(hex(int((1-my_onefraction_ne[0])*255))[-2:])
         markerSize = '1pt'
         dataprefix = self.fname+'_'
         #~ dataprefix = ''
@@ -283,36 +309,42 @@ class brush():
             graph0 = g.Root.page1.grid1.graph1
             graph1 = g.Root.page1.grid1.graph2
             graph2 = g.Root.page1.grid1.graph3
+            graph3 = g.Root.page1.grid1.graph4
+            graph4 = g.Root.page1.grid1.graph5
+            graph5 = g.Root.page1.grid1.graph6
         except (NameError, AttributeError):
             g = veusz.Embedded(self.fname)
             g.EnableToolbar()
 
             page = g.Root.Add('page')
-
+            page.width.val = '20cm'
+            page.height.val = '20cm'
+            g.ResizeWindow(800,900)
             grid = page.Add('grid')
             grid.bottomMargin.val ='0cm'
             grid.leftMargin.val = '0cm'
             grid.rightMargin.val = '0cm'
             grid.topMargin.val = '0cm'
-            grid.rows.val = 2
-            grid.columns.val = 1
+            grid.rows.val = 3
+            grid.columns.val = 2
             graph0 = grid.Add('graph')
             graph1 = grid.Add('graph')
             graph2 = grid.Add('graph')
-
+            graph3 = grid.Add('graph')
+            graph4 = grid.Add('graph')
+            graph5 = grid.Add('graph')
 
         #~ g.To('/page1/grid1/graph1')
 
         self.loadData()
-        #~ r=arange(1,len(sites))
         z = arange(0,self.Zbox)
         z = z[1:]
         x_dataname = dataprefix+'z'
         g.SetData(x_dataname, z)
 
-        graph = graph0
         ########################
-        # Plot polymer dencity #
+        graph = graph0
+        ## Plot polymer dencity #
         what_toPlot = 'phi'
         profile_toPlot = array(self.datadict['mol : brush : phi'])
         #profile_toPlot=profile_toPlot[1:-1]
@@ -324,18 +356,26 @@ class brush():
         xy.yData.val = y_dataname
         xy.marker.val = 'none'
 
-        xy.MarkerFill.color.val = 'black'
+        xy.MarkerFill.color.val = line_color
         xy.markerSize.val = markerSize
         xy.ErrorBarLine.width.val = '2pt'
         xy.ErrorBarLine.transparency.val = 50
         xy.PlotLine.width.val = '1.5pt'
         xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.color.val = line_color
 
+        y_axis=graph.y
+        x_axis=graph.x
 
+        #y_axis.log.val = True
+        y_axis.min.val = 1e-4
+        x_axis.max.val = 200
+        y_axis.label.val = '\italic{\\phi}'
+        x_axis.label.val = '\italic{z}'
 
-        ####################
-        # Plot counterions #
-
+        ########################
+        graph = graph1
+        ## Plot counterions #
         what_toPlot = 'phi_Na'
         profile_toPlot = array(self.datadict['mol : na : phi'])
         #profile_toPlot=profile_toPlot[1:-1]
@@ -347,16 +387,17 @@ class brush():
         xy.yData.val = y_dataname
         xy.marker.val = 'none'
 
-        xy.MarkerFill.color.val = 'black'
+        xy.MarkerFill.color.val = line_color
         xy.markerSize.val = markerSize
         xy.ErrorBarLine.width.val = '2pt'
         xy.ErrorBarLine.transparency.val = 50
         xy.PlotLine.width.val = '1.5pt'
         xy.PlotLine.style.val = 'solid'
-        xy.PlotLine.color.val = 'red'
-        ###############
-        # Plot coions #
+        xy.PlotLine.color.val = line_color
 
+        ########################
+        graph = graph1
+        ## Plot coions #
         what_toPlot = 'phi_Cl'
         profile_toPlot = array(self.datadict['mol : cl : phi'])
         #profile_toPlot=profile_toPlot[1:-1]
@@ -368,28 +409,28 @@ class brush():
         xy.yData.val = y_dataname
         xy.marker.val = 'none'
 
-        xy.MarkerFill.color.val = 'black'
+        xy.MarkerFill.color.val = line_color
         xy.markerSize.val = markerSize
         xy.ErrorBarLine.width.val = '2pt'
         xy.ErrorBarLine.transparency.val = 50
         xy.PlotLine.width.val = '1.5pt'
         xy.PlotLine.style.val = 'solid'
-        xy.PlotLine.color.val = 'blue'
+        xy.PlotLine.color.val = line_color
 
         y_axis=graph.y
         x_axis=graph.x
 
-        #y_axis.log.val = True
-        #y_axis.min.val = 1e-4
-        x_axis.max.val = 200
-        y_axis.label.val = '\\phi_{Na}, \\phi_{Cl}, \\phi'
+        y_axis.log.val = True
+        y_axis.min.val = 1e-9
+        y_axis.max.val = 1e-1
+        x_axis.max.val = 600
+        y_axis.label.val = '\italic{\\phi_{Cl}, \\phi_{Na}}'
         x_axis.label.val = '\italic{z}'
 
 
-        # Plot the distribution of the ends
-        graph = graph1
         ########################
-        # Plot polymer dencity #
+        graph = graph3
+        # Plot the distribution of the ends
         what_toPlot = 'ends'
         profile_toPlot = array(self.datadict['mol : brush : phi-polyE'])
         profile_toPlot=profile_toPlot/b.sigma/(b.f-1)
@@ -402,13 +443,13 @@ class brush():
         xy.yData.val = y_dataname
         xy.marker.val = 'none'
 
-        xy.MarkerFill.color.val = 'black'
+        xy.MarkerFill.color.val = line_color
         xy.markerSize.val = markerSize
         xy.ErrorBarLine.width.val = '2pt'
         xy.ErrorBarLine.transparency.val = 50
         xy.PlotLine.width.val = '1.5pt'
         xy.PlotLine.style.val = 'solid'
-
+        xy.PlotLine.color.val = line_color
 
         y_axis=graph.y
         x_axis=graph.x
@@ -416,16 +457,12 @@ class brush():
         #y_axis.log.val = True
         #y_axis.min.val = 1e-8
         x_axis.max.val = 200
-        y_axis.label.val = '\\phi_{ends}'
+        y_axis.label.val = '\italic{n_{ends}}'
         x_axis.label.val = '\italic{z}'
 
-
-
-
-        # Plot the distribution of the branching points
-        graph = graph2
         ########################
-        # Plot polymer dencity #
+        graph = graph2
+        # Plot the distribution of the branching points
         what_toPlot = 'bp'
         profile_toPlot = array(self.datadict['mol : brush : phi-polyB'])
         profile_toPlot=profile_toPlot/b.sigma
@@ -438,12 +475,55 @@ class brush():
         xy.yData.val = y_dataname
         xy.marker.val = 'none'
 
-        xy.MarkerFill.color.val = 'black'
+        xy.MarkerFill.color.val = line_color
         xy.markerSize.val = markerSize
         xy.ErrorBarLine.width.val = '2pt'
         xy.ErrorBarLine.transparency.val = 50
         xy.PlotLine.width.val = '1.5pt'
         xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.color.val = line_color
+
+        y_axis=graph.y
+        x_axis=graph.x
+
+        #y_axis.log.val = True
+        #y_axis.min.val = 1e-8
+        x_axis.max.val = 110
+        y_axis.label.val = '\italic{n_{bp}}'
+        x_axis.label.val = '\italic{z}'
+
+        ########################
+        graph = graph4
+        # Plot alpha vs phi
+        what_toPlot = 'alpha_total'
+        #~ A = array(self.datadict['mol : brush : alpha-poly1A'])
+        #~ B = array(self.datadict['mol : brush : alpha-polyEA'])
+        #~ C = array(self.datadict['mol : brush : alpha-polyBA'])
+        D = array(self.datadict['mol : brush : alpha-polyA'])
+
+        #~ A  = array(self.datadict['state : poly1A : phi'])
+        #~ B  = array(self.datadict['state : polyA : phi'])
+        #~ C  = array(self.datadict['state : polyBA : phi'])
+        #~ D  = array(self.datadict['state : polyEA : phi'])
+        #~ theta = self.datadict['mol : brush : theta']
+        profile_toPlot = (D)
+        #profile_toPlot=profile_toPlot[1:-1]
+        y_dataname = dataprefix+what_toPlot
+
+        g.SetData(y_dataname, profile_toPlot)
+        #~ g.SetData(x_dataname, phi)
+        xy = graph.Add('xy')
+        xy.xData.val = x_dataname
+        xy.yData.val = y_dataname
+        xy.marker.val = 'none'
+
+        xy.MarkerFill.color.val = line_color
+        xy.markerSize.val = markerSize
+        xy.ErrorBarLine.width.val = '2pt'
+        xy.ErrorBarLine.transparency.val = 50
+        xy.PlotLine.width.val = '1.5pt'
+        xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.color.val = line_color
 
 
         y_axis=graph.y
@@ -452,10 +532,215 @@ class brush():
         #y_axis.log.val = True
         #y_axis.min.val = 1e-8
         x_axis.max.val = 200
-        y_axis.label.val = '\\phi_{bp}'
+        y_axis.label.val = '\italic{\\alpha}'
+        x_axis.label.val = '\italic{z}'
+
+    ########################
+        graph = graph5
+        # Plot H3O vs z
+        what_toPlot = 'H3O'
+        profile_toPlot = (array(self.datadict['state : H3O : phi']))
+        #profile_toPlot=profile_toPlot[1:-1]
+        y_dataname = dataprefix+what_toPlot
+
+        g.SetData(y_dataname, profile_toPlot)
+        #~ g.SetData(x_dataname, phi)
+        xy = graph.Add('xy')
+        xy.xData.val = x_dataname
+        xy.yData.val = y_dataname
+        xy.marker.val = 'none'
+
+        xy.MarkerFill.color.val = line_color
+        xy.markerSize.val = markerSize
+        xy.ErrorBarLine.width.val = '2pt'
+        xy.ErrorBarLine.transparency.val = 50
+        xy.PlotLine.width.val = '1.5pt'
+        xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.color.val = line_color
+
+
+        y_axis=graph.y
+        x_axis=graph.x
+
+        #y_axis.log.val = True
+        #y_axis.min.val = 1e-8
+        x_axis.max.val = 200
+        y_axis.label.val = '\italic{\\phi_{H3O}}'
         x_axis.label.val = '\italic{z}'
 
 
+        #~ ########################
+        #~ # Plot the fractions calc on branching point
+        #~ x_dataname = dataprefix+'pk_bp'
+        #~ g.SetData(x_dataname, my_parameter_bp)
+        #~ # Plot the fraction of extended stars
+        #~ graph = graph5
+        #~ ########################
+        #~ markerSize = '2pt'
+        #~ # Plot lambda#
+        #~ what_toPlot = 'lambda_bp'
+        #~ profile_toPlot = my_fraction_bp # my_fraction_bp --- it's already array
+        #~ y_dataname = dataprefix+what_toPlot
+
+        #~ g.SetData(y_dataname, profile_toPlot)
+        #~ xy = graph.Add('xy')
+        #~ xy.xData.val = x_dataname
+        #~ xy.yData.val = y_dataname
+        #~ xy.marker.val = 'square'
+
+        #~ xy.MarkerFill.color.val = line_color
+        #~ xy.markerSize.val = markerSize
+        #~ xy.ErrorBarLine.width.val = '2pt'
+        #~ xy.ErrorBarLine.transparency.val = 50
+        #~ xy.PlotLine.width.val = '2pt'
+        #~ xy.PlotLine.style.val = 'solid'
+        #~ xy.PlotLine.hide.val = not False # False <---> don't plot lines
+
+        #~ ########################
+        #~ # Plot the fractions calc on terminal group
+        #~ x_dataname = dataprefix+'pk_ne'
+        #~ g.SetData(x_dataname, my_parameter_ne)
+        #~ # Plot the fraction of extended stars
+        #~ graph = graph5
+        #~ ########################
+        #~ markerSize = '3pt'
+        #~ # Plot lambda#
+        #~ what_toPlot = 'lambda_ne'
+        #~ profile_toPlot = my_fraction_ne # my_fraction_ne --- it's already array
+        #~ y_dataname = dataprefix+what_toPlot
+
+        #~ g.SetData(y_dataname, profile_toPlot)
+        #~ xy = graph.Add('xy')
+        #~ xy.xData.val = x_dataname
+        #~ xy.yData.val = y_dataname
+        #~ xy.marker.val = 'square'
+
+        #~ xy.MarkerFill.color.val = 'white'
+        #~ xy.markerSize.val = markerSize
+        #~ xy.ErrorBarLine.width.val = '2pt'
+        #~ xy.ErrorBarLine.transparency.val = 50
+        #~ xy.PlotLine.width.val = '2pt'
+        #~ xy.PlotLine.style.val = 'solid'
+        #~ xy.PlotLine.hide.val = not False # False <---> don't plot lines
+
+        #~ y_axis=graph.y
+        #~ x_axis=graph.x
+
+        #y_axis.log.val = True
+        #~ y_axis.min.val = -0.1
+        #~ y_axis.max.val = 1.1
+        #~ y_axis.label.val = '\italic{\\lambda}'
+        #~ x_axis.label.val = '\italic{\\sigma}'
+
+
+    def plotDiagram(self, profile_name = 'sys : noname : potential'):
+        global g, xy, y_axis
+        #line_color=my_line_color()
+        #line_type=my_line_type()
+        point_color_bp='#'+3*(hex(int((1-my_onefraction_bp[0])*255))[-2:])
+        point_color_ne='#'+3*(hex(int((1-my_onefraction_ne[0])*255))[-2:])
+        markerSize = '1pt'
+        dataprefix = self.fname+'_'
+        #~ dataprefix = ''
+        try:
+            type (g) == veusz.Embedded
+            page = g.Root.page1
+            graph0 = g.Root.page1.grid1.graph1
+            graph1 = g.Root.page1.grid1.graph2
+        except (NameError, AttributeError):
+            g = veusz.Embedded(self.fname)
+            g.EnableToolbar()
+
+            page = g.Root.Add('page')
+            page.width.val = '20cm'
+            page.height.val = '10cm'
+            g.ResizeWindow(900,600)
+            grid = page.Add('grid')
+            grid.bottomMargin.val ='0cm'
+            grid.leftMargin.val = '0cm'
+            grid.rightMargin.val = '0cm'
+            grid.topMargin.val = '0cm'
+            grid.rows.val = 1
+            grid.columns.val = 2
+            graph0 = grid.Add('graph')
+            graph1 = grid.Add('graph')
+
+        ########################
+        # Plot the extended fractions calc on branching point ###
+        x_dataname = dataprefix+'pH_bp'
+        g.SetData(x_dataname, my_twoparameter_bp)
+        # Plot the fraction of extended stars
+        graph = graph0
+        ########################
+        markerSize = '2pt'
+        # Plot lambda#
+        what_toPlot = 'lambdaone_bp'
+        profile_toPlot = my_oneparameter_bp # my_oneparameter_bp --- it's already array
+        y_dataname = dataprefix+what_toPlot
+
+        g.SetData(y_dataname, profile_toPlot)
+        xy = graph.Add('xy')
+        xy.xData.val = x_dataname
+        xy.yData.val = y_dataname
+        xy.marker.val = 'square'
+
+        xy.MarkerFill.color.val = point_color_bp
+        xy.MarkerLine.color.val = '#eeeeee'
+        xy.markerSize.val = markerSize
+        xy.ErrorBarLine.width.val = '2pt'
+        xy.ErrorBarLine.transparency.val = 50
+        xy.PlotLine.width.val = '2pt'
+        xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.hide.val = not False # False <---> don't plot lines
+
+        y_axis=graph.y
+        x_axis=graph.x
+        y_axis.log.val = True
+        #y_axis.min.val = 1e-4
+        #y_axis.max.val = 2e-1
+        x_axis.min.val = 0
+        x_axis.max.val = 3.5
+        y_axis.label.val = '\italic{\c_{s}}'
+        x_axis.label.val = '\italic{\chi}'
+
+        ########################
+        # Plot the extended fractions calc on terminal group
+        x_dataname = dataprefix+'pH_ne'
+        g.SetData(x_dataname, my_twoparameter_ne)
+        # Plot the fraction of extended stars
+        graph = graph1
+        ########################
+        markerSize = '2pt'
+        # Plot lambda#
+        what_toPlot = 'lambdaone_ne'
+        profile_toPlot = my_oneparameter_ne # my_oneparameter_ne --- it's already array
+        y_dataname = dataprefix+what_toPlot
+
+        g.SetData(y_dataname, profile_toPlot)
+        xy = graph.Add('xy')
+        xy.xData.val = x_dataname
+        xy.yData.val = y_dataname
+        xy.marker.val = 'square'
+
+        xy.MarkerFill.color.val = point_color_ne
+        xy.MarkerLine.color.val = '#eeeeee'
+        xy.markerSize.val = markerSize
+        xy.ErrorBarLine.width.val = '2pt'
+        xy.ErrorBarLine.transparency.val = 50
+        xy.PlotLine.width.val = '2pt'
+        xy.PlotLine.style.val = 'solid'
+        xy.PlotLine.hide.val = not False # False <---> don't plot lines
+
+        y_axis=graph.y
+        x_axis=graph.x
+
+        y_axis.log.val = True
+        #y_axis.min.val = 1e-7
+        #y_axis.max.val = 1e-0
+        x_axis.min.val = 0
+        x_axis.max.val = 3.5
+        y_axis.label.val = '\italic{\c_{s}}'
+        x_axis.label.val = '\italic{\chi}'
 
     def getFreeEnergy(self):
         F = self.datadict['sys : noname : Helmholtz energy(po)']

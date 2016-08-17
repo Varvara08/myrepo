@@ -34,9 +34,7 @@ p3m-dipolar.lo: ../../../src/core/p3m-dipolar.cpp \
  /usr/include/c++/4.8/cstring /usr/include/string.h \
  ../../../src/core/debug.hpp ../../../src/core/errorhandling.hpp \
  ../../../src/core/interaction_data.hpp \
- ../../../src/core/particle_data.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/particle_data.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/integrate.hpp ../../../src/core/global.hpp \
  ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
@@ -186,9 +184,7 @@ config-features.hpp:
 
 ../../../src/core/particle_data.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/integrate.hpp:
 

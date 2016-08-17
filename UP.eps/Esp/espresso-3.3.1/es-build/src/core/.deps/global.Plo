@@ -40,8 +40,7 @@ global.lo: ../../../src/core/global.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/mpifake/mpi.h \
  ../../../src/core/domain_decomposition.hpp ../../../src/core/cells.hpp \
  ../../../src/core/ghosts.hpp ../../../src/core/verlet.hpp \
  ../../../src/core/integrate.hpp ../../../src/core/thermostat.hpp \
@@ -210,9 +209,7 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/domain_decomposition.hpp:
 

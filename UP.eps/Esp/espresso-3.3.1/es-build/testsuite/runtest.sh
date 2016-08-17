@@ -38,13 +38,13 @@ TESTLOG=runtest.log
 
 srcdir=../../testsuite
 ESPRESSO=../Espresso
-ESMPIEXEC=/home/alexk/Esp/espresso-3.3.1/es-build/tools/es_mpiexec
+ESMPIEXEC=
 
 # tests need to be run from the directory where this script is located
 cd ${0%runtest.sh}
 
 # handle processors
-if test "x" = "xyes" || test x4 = "x1"; then 
+if test "xyes" = "xyes" || test x4 = "x1"; then 
   processors=1
   if test "x$1" = "x-p"; then
       echo "ERROR: ESPResSo compiled without MPI, but -p $2 given!"
@@ -115,7 +115,7 @@ for np in $processors; do
     ignored=
     succeeded=
     for testcase in $testcases; do
-	if test x = "xyes"; then
+	if test xyes = "xyes"; then
 	  CMD="$ESPRESSO $srcdir/$testcase -quiet"
 	else
 	  CMD="$ESMPIEXEC -n $np $ESPRESSO $srcdir/$testcase -quiet"

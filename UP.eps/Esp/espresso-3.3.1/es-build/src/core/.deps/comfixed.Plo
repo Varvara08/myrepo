@@ -34,8 +34,7 @@ comfixed.lo: ../../../src/core/comfixed.cpp /usr/include/stdc-predef.h \
  ../../../src/core/errorhandling.hpp \
  ../../../src/core/interaction_data.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/cells.hpp \
- ../../../src/core/ghosts.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/ghosts.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/verlet.hpp ../../../src/core/grid.hpp \
  /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
@@ -178,9 +177,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

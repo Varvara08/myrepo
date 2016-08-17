@@ -93,9 +93,7 @@ changeVolume.lo: changeVolume.cpp /usr/include/stdc-predef.h \
  ../../../../src/core/errorhandling.hpp /usr/include/c++/4.8/climits \
  ../../../../src/core/communication.hpp \
  ../../../../src/core/particle_data.hpp ../../../../src/core/random.hpp \
- ../../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../../src/core/topology.hpp ../../../../src/core/mpifake/mpi.h \
  /usr/include/python2.7/compile.h /usr/include/python2.7/frameobject.h \
  /usr/include/python2.7/traceback.h
 
@@ -453,9 +451,7 @@ changeVolume.lo: changeVolume.cpp /usr/include/stdc-predef.h \
 
 ../../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../../src/core/mpifake/mpi.h:
 
 /usr/include/python2.7/compile.h:
 

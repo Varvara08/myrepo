@@ -40,9 +40,7 @@ lj_tcl.lo: ../../../src/tcl/lj_tcl.cpp /usr/include/stdc-predef.h \
  /usr/include/tcl.h /usr/include/tclDecls.h /usr/include/tclPlatDecls.h \
  ../../../src/core/mol_cut.hpp ../../../src/core/communication.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/tcl/forcecap_tcl.hpp
+ ../../../src/core/mpifake/mpi.h ../../../src/tcl/forcecap_tcl.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -200,8 +198,6 @@ lj_tcl.lo: ../../../src/tcl/lj_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/tcl/forcecap_tcl.hpp:

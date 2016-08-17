@@ -36,8 +36,7 @@ modes.lo: ../../../src/core/modes.cpp /usr/include/stdc-predef.h \
  ../../../src/core/particle_data.hpp \
  ../../../src/core/interaction_data.hpp ../../../src/core/topology.hpp \
  /usr/include/fftw3.h ../../../src/core/communication.hpp \
- ../../../src/core/random.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/random.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
@@ -185,9 +184,7 @@ config-features.hpp:
 
 ../../../src/core/random.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/grid.hpp:
 

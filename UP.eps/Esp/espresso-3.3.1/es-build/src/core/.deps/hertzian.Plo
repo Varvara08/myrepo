@@ -37,8 +37,7 @@ hertzian.lo: ../../../src/core/hertzian.cpp /usr/include/stdc-predef.h \
  ../../../src/core/particle_data.hpp ../../../src/core/mol_cut.hpp \
  ../../../src/core/virtual_sites.hpp ../../../src/core/communication.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -180,6 +179,4 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

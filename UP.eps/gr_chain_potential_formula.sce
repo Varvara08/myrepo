@@ -69,11 +69,11 @@ global gt gf nl lambda phi;
 //////////////////
 lambda=0.16666666667; // 1/6
 //nl=150; // number of units in the chain
-for nl=150:250 // number of units in the chain
+for nl=250:251 // number of units in the chain
 q=1;
 f=q+1;   // for formula M
 npp=100; // for formula M
-h2n=0.25; // for potention V(z)=V(h/2n)-V(z/2n), where 2n <=> npp
+h2n=0.75; // for potention V(z)=V(h/2n)-V(z/2n), where 2n <=> npp
 M=(%pi*npp/2)/acos(sqrt((f-1)/f));
 //
 // Calculation potention from the equation

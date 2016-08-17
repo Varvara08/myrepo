@@ -44,8 +44,7 @@ integrate_tcl.lo: ../../../src/tcl/integrate_tcl.cpp \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/lbgpu.hpp ../../../src/core/statistics_observable.hpp \
  ../../../src/tcl/pressure_tcl.hpp ../../../src/tcl/parser.hpp \
  ../../../src/core/utils.hpp /usr/include/tcl.h /usr/include/tclDecls.h \
@@ -219,9 +218,7 @@ integrate_tcl.lo: ../../../src/tcl/integrate_tcl.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/lbgpu.hpp:
 

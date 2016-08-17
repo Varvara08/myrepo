@@ -44,8 +44,7 @@ external_potential_tcl.lo: ../../../src/tcl/external_potential_tcl.cpp \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -215,6 +214,4 @@ external_potential_tcl.lo: ../../../src/tcl/external_potential_tcl.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

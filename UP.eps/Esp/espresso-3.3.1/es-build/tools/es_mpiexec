@@ -39,8 +39,8 @@
 # 1 if the command line was erroneous
 #
 
-MYMPIEXEC=/home/alexk/Esp/espresso-3.3.1/es-build/mympiexec.sh
-MPIEXEC=/usr/lib64/mpi/gcc/openmpi/bin/mpiexec
+MYMPIEXEC=
+MPIEXEC=
 
 # get number of processors
 # since we do basic mpiexec, -n should always be

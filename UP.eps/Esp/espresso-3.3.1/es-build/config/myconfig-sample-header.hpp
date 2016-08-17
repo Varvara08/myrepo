@@ -3,7 +3,7 @@
 
     Create a copy of this file in any of these locations: 
         @myconfig@ 
-	/home/alexk/Esp/espresso-3.3.1/es-build/../@myconfig@
+	/home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/../@myconfig@
 
     Then uncomment any of the following lines to activate the
     corresponding feature of ESPResSo. It is recommended to activate

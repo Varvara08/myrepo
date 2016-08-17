@@ -69,8 +69,7 @@ initialize.lo: ../../../src/core/initialize.cpp \
  /usr/include/c++/4.8/bits/stl_tempbuf.h ../../../src/core/pressure.hpp \
  ../../../src/core/integrate.hpp ../../../src/core/thermostat.hpp \
  ../../../src/core/random.hpp ../../../src/core/cells.hpp \
- ../../../src/core/ghosts.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/ghosts.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/verlet.hpp ../../../src/core/lb.hpp \
  ../../../src/core/lattice_inline.hpp ../../../src/core/lattice.hpp \
  ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
@@ -359,9 +358,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

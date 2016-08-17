@@ -39,8 +39,7 @@ interaction_data_tcl.lo: ../../../src/tcl/interaction_data_tcl.cpp \
  ../../../src/tcl/forcecap_tcl.hpp ../../../src/core/interaction_data.hpp \
  ../../../src/core/utils.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/communication.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/global.hpp ../../../src/tcl/comforce_tcl.hpp \
  ../../../src/tcl/comfixed_tcl.hpp ../../../src/tcl/rattle_tcl.hpp \
  ../../../src/tcl/mol_cut_tcl.hpp ../../../src/core/lj.hpp \
@@ -239,9 +238,7 @@ interaction_data_tcl.lo: ../../../src/tcl/interaction_data_tcl.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/global.hpp:
 

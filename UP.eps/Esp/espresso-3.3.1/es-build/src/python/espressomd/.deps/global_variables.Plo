@@ -93,9 +93,7 @@ global_variables.lo: global_variables.cpp /usr/include/stdc-predef.h \
  ../../../src/core/myconfig-final.hpp \
  ../../../src/core/config-features.hpp ../../../../src/core/debug.hpp \
  ../../../../src/core/errorhandling.hpp ../../../../src/core/random.hpp \
- ../../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../../src/core/topology.hpp ../../../../src/core/mpifake/mpi.h \
  ../../../../src/core/integrate.hpp ../../../../src/core/verlet.hpp \
  ../../../../src/core/lattice.hpp ../../../../src/core/grid.hpp \
  /usr/include/c++/4.8/climits ../../../../src/core/communication.hpp \
@@ -467,9 +465,7 @@ global_variables.lo: global_variables.cpp /usr/include/stdc-predef.h \
 
 ../../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../../src/core/mpifake/mpi.h:
 
 ../../../../src/core/integrate.hpp:
 

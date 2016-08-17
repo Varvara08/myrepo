@@ -134,8 +134,8 @@ CONFIG_STATUS_DEPENDENCIES = $(top_srcdir)/src/features.def $(top_srcdir)/config
 CPP = gcc -E
 CPPFLAGS = 
 CPU_COUNT = 4
-CXX = mpic++
-CXXCPP = mpic++ -E
+CXX = g++
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -Wall -O3 
 CYGPATH_W = echo
@@ -145,14 +145,14 @@ DEPDIR = .deps
 DLLTOOL = false
 DOT = /usr/bin/dot
 DOT_PATH = /usr/bin
-DOXYGEN = no
+DOXYGEN = /usr/bin/doxygen
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
-ESPRESSO_MPIEXEC = /home/alexk/Esp/espresso-3.3.1/es-build/tools/es_mpiexec
+ESPRESSO_MPIEXEC = 
 EXEEXT = 
 FGREP = /usr/bin/grep -F
 GREP = /usr/bin/grep
@@ -177,10 +177,10 @@ MAKEINFO = makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 MPICXX = 
-MPIEXEC = /usr/lib64/mpi/gcc/openmpi/bin/mpiexec
-MPI_FAKE = 
+MPIEXEC = 
+MPI_FAKE = yes
 MYCONFIG = myconfig.hpp
-MYMPIEXEC = /home/alexk/Esp/espresso-3.3.1/es-build/mympiexec.sh
+MYMPIEXEC = 
 NM = /usr/bin/nm -B
 NMEDIT = 
 NVCC = no
@@ -221,13 +221,13 @@ X_CFLAGS =
 X_EXTRA_LIBS = 
 X_LIBS = 
 X_PRE_LIBS = 
-abs_builddir = /home/alexk/Esp/espresso-3.3.1/es-build/doc/doxygen
-abs_srcdir = /home/alexk/Esp/espresso-3.3.1/es-build/../doc/doxygen
-abs_top_builddir = /home/alexk/Esp/espresso-3.3.1/es-build
-abs_top_srcdir = /home/alexk/Esp/espresso-3.3.1/es-build/..
+abs_builddir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/doc/doxygen
+abs_srcdir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/../doc/doxygen
+abs_top_builddir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build
+abs_top_srcdir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/..
 ac_ct_AR = ar
 ac_ct_CC = gcc
-ac_ct_CXX = mpic++
+ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 am__include = include
 am__leading_dot = .
@@ -255,7 +255,7 @@ host_vendor = suse
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/alexk/Esp/espresso-3.3.1/config/install-sh
+install_sh = ${SHELL} /home/alexander/mygit/UP/Esp/espresso-3.3.1/config/install-sh
 libdir = ${exec_prefix}/lib64
 libexecdir = ${exec_prefix}/lib
 localedir = ${datarootdir}/locale
@@ -267,7 +267,7 @@ oldincludedir = /usr/include
 pdfdir = ${docdir}
 pkgpyexecdir = ${pyexecdir}/espresso
 pkgpythondir = ${pythondir}/espresso
-prefix = /home/alexk/Espresso
+prefix = /home/alexander/Espresso
 program_transform_name = s,x,x,
 psdir = ${docdir}
 pyexecdir = ${exec_prefix}/lib64/python2.7/site-packages
@@ -526,39 +526,39 @@ uninstall-am:
 .PHONY: doc doxygen
 doc: doxygen
 
-#background_errors.dox:
-#	$(AM_V_GEN)SRCDIR=$(srcdir) AWK=$(AWK) \
-#	  $(SHELL) $(srcdir)/background_errors.sh \
-#	    $(top_srcdir)/src/*.cpp $(top_srcdir)/src/*.hpp \
-#	    $(top_srcdir)/src/tcl/*.cpp $(top_srcdir)/src/tcl/*.hpp
+background_errors.dox:
+	$(AM_V_GEN)SRCDIR=$(srcdir) AWK=$(AWK) \
+	  $(SHELL) $(srcdir)/background_errors.sh \
+	    $(top_srcdir)/src/*.cpp $(top_srcdir)/src/*.hpp \
+	    $(top_srcdir)/src/tcl/*.cpp $(top_srcdir)/src/tcl/*.hpp
 
-#doxy-features:
-#	$(AM_V_GEN)$(PYTHON) $(srcdir)/gen_doxyconfig.py \
-#	  $(top_srcdir)/src/features.def doxy-features
+doxy-features:
+	$(AM_V_GEN)$(PYTHON) $(srcdir)/gen_doxyconfig.py \
+	  $(top_srcdir)/src/features.def doxy-features
 
-#doxygen-html: background_errors.dox doxy-features
-#	$(AM_V_GEN)\
-#	ESPRESSO_VERSION=`cd $(top_srcdir); sh config/genversion.sh` \
-#	PACKAGE="ESPResSo $$ESPRESSO_VERSION" \
-#	SRCDIR="$(abs_top_srcdir)" \
-#	BUILDDIR="$(builddir)" \
-#	HAVE_DOT="$(HAVE_DOT)" DOT_PATH="$(DOT_PATH)" \
-#	  $(DOXYGEN) $(srcdir)/Doxyfile
-#	@echo "***************************************************************************"
-#	@echo "* The code documentation is now accessible at"
-#	@echo "*  file://`pwd`/html/index.html"
-#	@echo "***************************************************************************"
+doxygen-html: background_errors.dox doxy-features
+	$(AM_V_GEN)\
+	ESPRESSO_VERSION=`cd $(top_srcdir); sh config/genversion.sh` \
+	PACKAGE="ESPResSo $$ESPRESSO_VERSION" \
+	SRCDIR="$(abs_top_srcdir)" \
+	BUILDDIR="$(builddir)" \
+	HAVE_DOT="$(HAVE_DOT)" DOT_PATH="$(DOT_PATH)" \
+	  $(DOXYGEN) $(srcdir)/Doxyfile
+	@echo "***************************************************************************"
+	@echo "* The code documentation is now accessible at"
+	@echo "*  file://`pwd`/html/index.html"
+	@echo "***************************************************************************"
 
-#doxygen: doxygen-html
+doxygen: doxygen-html
 
-##doxygen:
-##	@echo "Python was not found in your PATH."
-##	@echo "Can't build the code documentation without python."
-##	@echo "Install python and rerun configure."
-doxygen:
-	@echo "doxygen was not found in your PATH."
-	@echo "Can't build the code documentation without doxygen and python."
-	@echo "Install doxygen and rerun configure."
+#doxygen:
+#	@echo "Python was not found in your PATH."
+#	@echo "Can't build the code documentation without python."
+#	@echo "Install python and rerun configure."
+#doxygen:
+#	@echo "doxygen was not found in your PATH."
+#	@echo "Can't build the code documentation without doxygen and python."
+#	@echo "Install doxygen and rerun configure."
 clean-local:
 	-rm -rf html
 

@@ -107,7 +107,7 @@ am__append_4 = config-features.hpp config-features.cpp
 #################################################################
 # Handling of the MPI fake implementation
 #################################################################
-#am__append_5 = mpifake/mpi.h mpifake/mpi.cpp
+am__append_5 = mpifake/mpi.h mpifake/mpi.cpp
 subdir = src/core
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/config/depcomp $(noinst_HEADERS)
@@ -212,7 +212,7 @@ am__libEspresso_la_SOURCES_DIST = config-features.cpp cells.cpp \
 	actor/mmm-common_cuda.hpp actor/specfunc_cuda.hpp \
 	config-version.cpp mpifake/mpi.h mpifake/mpi.cpp
 am__dirstamp = $(am__leading_dot)dirstamp
-#am__objects_1 = mpifake/mpi.lo
+am__objects_1 = mpifake/mpi.lo
 am_libEspresso_la_OBJECTS = config-features.lo cells.lo collision.lo \
 	communication.lo comfixed.lo comforce.lo constraint.lo \
 	cuda_interface.lo debug.lo domain_decomposition.lo \
@@ -348,8 +348,8 @@ CONFIG_STATUS_DEPENDENCIES = $(top_srcdir)/src/features.def $(top_srcdir)/config
 CPP = gcc -E
 CPPFLAGS = 
 CPU_COUNT = 4
-CXX = mpic++
-CXXCPP = mpic++ -E
+CXX = g++
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -Wall -O3 
 CYGPATH_W = echo
@@ -359,14 +359,14 @@ DEPDIR = .deps
 DLLTOOL = false
 DOT = /usr/bin/dot
 DOT_PATH = /usr/bin
-DOXYGEN = no
+DOXYGEN = /usr/bin/doxygen
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
-ESPRESSO_MPIEXEC = /home/alexk/Esp/espresso-3.3.1/es-build/tools/es_mpiexec
+ESPRESSO_MPIEXEC = 
 EXEEXT = 
 FGREP = /usr/bin/grep -F
 GREP = /usr/bin/grep
@@ -391,10 +391,10 @@ MAKEINFO = makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 MPICXX = 
-MPIEXEC = /usr/lib64/mpi/gcc/openmpi/bin/mpiexec
-MPI_FAKE = 
+MPIEXEC = 
+MPI_FAKE = yes
 MYCONFIG = myconfig.hpp
-MYMPIEXEC = /home/alexk/Esp/espresso-3.3.1/es-build/mympiexec.sh
+MYMPIEXEC = 
 NM = /usr/bin/nm -B
 NMEDIT = 
 NVCC = no
@@ -435,13 +435,13 @@ X_CFLAGS =
 X_EXTRA_LIBS = 
 X_LIBS = 
 X_PRE_LIBS = 
-abs_builddir = /home/alexk/Esp/espresso-3.3.1/es-build/src/core
-abs_srcdir = /home/alexk/Esp/espresso-3.3.1/es-build/../src/core
-abs_top_builddir = /home/alexk/Esp/espresso-3.3.1/es-build
-abs_top_srcdir = /home/alexk/Esp/espresso-3.3.1/es-build/..
+abs_builddir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/src/core
+abs_srcdir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/../src/core
+abs_top_builddir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build
+abs_top_srcdir = /home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build/..
 ac_ct_AR = ar
 ac_ct_CC = gcc
-ac_ct_CXX = mpic++
+ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 am__include = include
 am__leading_dot = .
@@ -469,7 +469,7 @@ host_vendor = suse
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/alexk/Esp/espresso-3.3.1/config/install-sh
+install_sh = ${SHELL} /home/alexander/mygit/UP/Esp/espresso-3.3.1/config/install-sh
 libdir = ${exec_prefix}/lib64
 libexecdir = ${exec_prefix}/lib
 localedir = ${datarootdir}/locale
@@ -481,7 +481,7 @@ oldincludedir = /usr/include
 pdfdir = ${docdir}
 pkgpyexecdir = ${pyexecdir}/espresso
 pkgpythondir = ${pythondir}/espresso
-prefix = /home/alexk/Espresso
+prefix = /home/alexander/Espresso
 program_transform_name = s,x,x,
 psdir = ${docdir}
 pyexecdir = ${exec_prefix}/lib64/python2.7/site-packages
@@ -634,7 +634,7 @@ libEspresso_la_SOURCES = config-features.cpp cells.cpp cells.hpp \
 noinst_HEADERS = myconfig-default.hpp
 BUILT_SOURCES = myconfig-final.hpp $(am__append_3)
 # mpifake should come before any system includes
-#AM_CPPFLAGS = -I$(srcdir)/mpifake
+AM_CPPFLAGS = -I$(srcdir)/mpifake
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 

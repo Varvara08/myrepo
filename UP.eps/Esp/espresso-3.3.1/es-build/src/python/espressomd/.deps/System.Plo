@@ -120,13 +120,11 @@ System.lo: System.cpp /usr/include/stdc-predef.h \
  ../../../../src/core/thermostat.hpp ../../../../src/core/random.hpp \
  ../../../../src/core/global.hpp ../../../../src/core/integrate.hpp \
  ../../../../src/core/cells.hpp ../../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../../src/core/verlet.hpp ../../../../src/core/lb.hpp \
- ../../../../src/core/lattice_inline.hpp ../../../../src/core/lattice.hpp \
- ../../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
- ../../../../src/core/communication.hpp ../../../../src/core/topology.hpp \
- ../../../../src/core/lbgpu.hpp \
+ ../../../../src/core/mpifake/mpi.h ../../../../src/core/verlet.hpp \
+ ../../../../src/core/lb.hpp ../../../../src/core/lattice_inline.hpp \
+ ../../../../src/core/lattice.hpp ../../../../src/core/grid.hpp \
+ /usr/include/c++/4.8/climits ../../../../src/core/communication.hpp \
+ ../../../../src/core/topology.hpp ../../../../src/core/lbgpu.hpp \
  ../../../../src/core/statistics_observable.hpp \
  ../../../../src/core/dpd.hpp ../../../../src/core/interaction_data.hpp \
  ../../../../src/core/virtual_sites.hpp ../../../../src/core/gb.hpp \
@@ -612,9 +610,7 @@ System.lo: System.cpp /usr/include/stdc-predef.h \
 
 ../../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../../src/core/mpifake/mpi.h:
 
 ../../../../src/core/verlet.hpp:
 

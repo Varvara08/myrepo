@@ -34,8 +34,7 @@ mmm2d_tcl.lo: ../../../src/tcl/mmm2d_tcl.cpp /usr/include/stdc-predef.h \
  ../../../src/core/debug.hpp ../../../src/core/errorhandling.hpp \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/utils.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/cells.hpp ../../../src/core/ghosts.hpp \
  ../../../src/core/verlet.hpp ../../../src/core/mmm2d.hpp \
  ../../../src/tcl/parser.hpp /usr/include/tcl.h /usr/include/tclDecls.h \
@@ -175,9 +174,7 @@ mmm2d_tcl.lo: ../../../src/tcl/mmm2d_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/cells.hpp:
 

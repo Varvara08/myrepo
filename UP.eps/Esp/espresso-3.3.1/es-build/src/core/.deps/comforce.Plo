@@ -35,10 +35,8 @@ comforce.lo: ../../../src/core/comforce.cpp /usr/include/stdc-predef.h \
  ../../../src/core/particle_data.hpp ../../../src/core/statistics.hpp \
  ../../../src/core/interaction_data.hpp ../../../src/core/topology.hpp \
  ../../../src/core/cells.hpp ../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/verlet.hpp ../../../src/core/communication.hpp \
- ../../../src/core/random.hpp
+ ../../../src/core/mpifake/mpi.h ../../../src/core/verlet.hpp \
+ ../../../src/core/communication.hpp ../../../src/core/random.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -178,9 +176,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

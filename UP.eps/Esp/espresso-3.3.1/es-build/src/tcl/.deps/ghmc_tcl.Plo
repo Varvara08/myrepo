@@ -36,8 +36,7 @@ ghmc_tcl.lo: ../../../src/tcl/ghmc_tcl.cpp /usr/include/stdc-predef.h \
  ../../../src/tcl/ghmc_tcl.hpp ../../../src/core/ghmc.hpp \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/utils.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/thermostat.hpp ../../../src/core/global.hpp \
  ../../../src/core/integrate.hpp ../../../src/core/cells.hpp \
  ../../../src/core/ghosts.hpp ../../../src/core/verlet.hpp \
@@ -201,9 +200,7 @@ ghmc_tcl.lo: ../../../src/tcl/ghmc_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/thermostat.hpp:
 

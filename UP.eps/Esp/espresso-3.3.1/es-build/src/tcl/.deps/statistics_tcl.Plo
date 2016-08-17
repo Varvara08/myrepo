@@ -76,9 +76,8 @@ statistics_tcl.lo: ../../../src/tcl/statistics_tcl.cpp \
  /usr/include/c++/4.8/bits/stl_tempbuf.h ../../../src/core/modes.hpp \
  /usr/include/fftw3.h ../../../src/tcl/pressure_tcl.hpp \
  ../../../src/core/communication.hpp ../../../src/core/random.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/grid.hpp \
+ /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -339,9 +338,7 @@ statistics_tcl.lo: ../../../src/tcl/statistics_tcl.cpp \
 
 ../../../src/core/random.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/grid.hpp:
 

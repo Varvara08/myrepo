@@ -34,11 +34,9 @@ cuda_interface.lo: ../../../src/core/cuda_interface.cpp \
  ../../../src/core/config.hpp ../../src/acconfig.hpp myconfig-final.hpp \
  config-features.hpp ../../../src/core/debug.hpp \
  ../../../src/core/errorhandling.hpp ../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/verlet.hpp ../../../src/core/communication.hpp \
- ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- ../../../src/core/cuda_interface.hpp \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/verlet.hpp \
+ ../../../src/core/communication.hpp ../../../src/core/random.hpp \
+ ../../../src/core/topology.hpp ../../../src/core/cuda_interface.hpp \
  ../../../src/core/SystemInterface.hpp ../../../src/core/Vector.hpp \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
  /usr/include/c++/4.8/bits/stl_relops.h \
@@ -209,9 +207,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

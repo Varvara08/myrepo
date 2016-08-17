@@ -38,8 +38,7 @@ ljcos2.lo: ../../../src/core/ljcos2.cpp /usr/include/stdc-predef.h \
  ../../../src/core/virtual_sites.hpp ../../../src/core/forcecap.hpp \
  ../../../src/core/lj.hpp ../../../src/core/communication.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -185,6 +184,4 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

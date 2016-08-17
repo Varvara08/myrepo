@@ -38,8 +38,7 @@ topology_tcl.lo: ../../../src/tcl/topology_tcl.cpp \
  ../../../src/tcl/statistics_chain_tcl.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/communication.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -189,6 +188,4 @@ topology_tcl.lo: ../../../src/tcl/topology_tcl.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

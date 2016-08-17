@@ -92,9 +92,7 @@ thermostat.lo: thermostat.cpp /usr/include/stdc-predef.h \
  ../../../src/core/myconfig-final.hpp \
  ../../../src/core/config-features.hpp ../../../../src/core/debug.hpp \
  ../../../../src/core/errorhandling.hpp ../../../../src/core/random.hpp \
- ../../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../../src/core/topology.hpp ../../../../src/core/mpifake/mpi.h \
  ../../../../src/core/global.hpp ../../../../src/core/thermostat.hpp \
  ../../../../src/core/global.hpp ../../../../src/core/integrate.hpp \
  ../../../../src/core/cells.hpp ../../../../src/core/ghosts.hpp \
@@ -456,9 +454,7 @@ thermostat.lo: thermostat.cpp /usr/include/stdc-predef.h \
 
 ../../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../../src/core/mpifake/mpi.h:
 
 ../../../../src/core/global.hpp:
 

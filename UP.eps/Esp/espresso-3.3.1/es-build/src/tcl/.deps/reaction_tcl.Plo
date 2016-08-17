@@ -37,9 +37,7 @@ reaction_tcl.lo: ../../../src/tcl/reaction_tcl.cpp \
  ../../../src/core/utils.hpp /usr/include/tcl.h /usr/include/tclDecls.h \
  /usr/include/tclPlatDecls.h ../../../src/core/communication.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/integrate.hpp
+ ../../../src/core/mpifake/mpi.h ../../../src/core/integrate.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -185,8 +183,6 @@ reaction_tcl.lo: ../../../src/tcl/reaction_tcl.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/integrate.hpp:

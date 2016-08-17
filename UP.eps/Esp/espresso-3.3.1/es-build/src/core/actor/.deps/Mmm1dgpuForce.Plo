@@ -67,8 +67,7 @@ actor/Mmm1dgpuForce.lo: ../../../src/core/actor/Mmm1dgpuForce.cpp \
  /usr/include/bits/stdio.h /usr/include/c++/4.8/cstring \
  /usr/include/string.h ../../../src/core/debug.hpp \
  ../../../src/core/errorhandling.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/interaction_data.hpp ../../../src/core/forces.hpp \
  ../../../src/core/iccp3m.hpp /usr/include/c++/4.8/ctime \
  /usr/include/bits/timex.h ../../../src/core/p3m.hpp \
@@ -304,9 +303,7 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/interaction_data.hpp:
 

@@ -51,7 +51,7 @@
 #define HAVE_MEMSET 1
 
 /* Define if you have the MPI library. */
-#define HAVE_MPI 1
+/* #undef HAVE_MPI */
 
 /* Define to 1 if you have the <netdb.h> header file. */
 #define HAVE_NETDB_H 1

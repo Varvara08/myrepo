@@ -34,10 +34,8 @@ cells.lo: ../../../src/core/cells.cpp /usr/include/stdc-predef.h \
  config-features.hpp ../../../src/core/debug.hpp \
  ../../../src/core/errorhandling.hpp ../../../src/core/cells.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/verlet.hpp ../../../src/core/grid.hpp \
- /usr/include/c++/4.8/climits \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/verlet.hpp \
+ ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -184,9 +182,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

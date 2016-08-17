@@ -7,9 +7,9 @@
 # without any warranty.
 #
 if test -n "$PYTHONPATH"; then
-    PYTHONPATH=$PYTHONPATH:/home/alexk/Esp/espresso-3.3.1/es-build
+    PYTHONPATH=$PYTHONPATH:/home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build
 else
-    PYTHONPATH=/home/alexk/Esp/espresso-3.3.1/es-build
+    PYTHONPATH=/home/alexander/mygit/UP/Esp/espresso-3.3.1/es-build
 fi
 export PYTHONPATH
 exec /usr/bin/python $@

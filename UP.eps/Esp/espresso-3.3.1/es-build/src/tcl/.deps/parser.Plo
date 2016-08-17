@@ -36,8 +36,7 @@ parser.lo: ../../../src/tcl/parser.cpp /usr/include/stdc-predef.h \
  /usr/include/tclPlatDecls.h ../../../src/core/communication.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/utils.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -181,6 +180,4 @@ parser.lo: ../../../src/tcl/parser.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

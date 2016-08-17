@@ -48,9 +48,7 @@ imd.lo: ../../../src/core/imd.cpp /usr/include/stdc-predef.h \
  ../../../src/core/errorhandling.hpp ../../../src/core/imd.hpp \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/statistics_chain.hpp \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/statistics_chain.hpp \
  ../../../src/core/statistics_molecule.hpp \
  ../../../src/core/statistics.hpp ../../../src/core/interaction_data.hpp \
  ../../../src/core/vmdsock.hpp
@@ -239,9 +237,7 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/statistics_chain.hpp:
 

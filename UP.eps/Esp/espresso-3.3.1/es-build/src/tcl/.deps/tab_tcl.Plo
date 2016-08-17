@@ -45,8 +45,7 @@ tab_tcl.lo: ../../../src/tcl/tab_tcl.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/forcecap.hpp ../../../src/tcl/forcecap_tcl.hpp
 
 /usr/include/stdc-predef.h:
@@ -225,9 +224,7 @@ tab_tcl.lo: ../../../src/tcl/tab_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/forcecap.hpp:
 

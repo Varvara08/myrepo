@@ -36,8 +36,7 @@ fene.lo: ../../../src/core/fene.cpp /usr/include/stdc-predef.h \
  ../../../src/core/interaction_data.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/random.hpp \
  ../../../src/core/communication.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -175,6 +174,4 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

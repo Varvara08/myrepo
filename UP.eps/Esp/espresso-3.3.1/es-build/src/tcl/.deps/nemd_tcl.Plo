@@ -35,11 +35,10 @@ nemd_tcl.lo: ../../../src/tcl/nemd_tcl.cpp /usr/include/stdc-predef.h \
  ../../../src/core/debug.hpp ../../../src/core/errorhandling.hpp \
  ../../../src/core/integrate.hpp ../../../src/core/communication.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/tcl/parser.hpp ../../../src/core/utils.hpp \
- /usr/include/tcl.h /usr/include/tclDecls.h /usr/include/tclPlatDecls.h \
- ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
+ ../../../src/core/mpifake/mpi.h ../../../src/tcl/parser.hpp \
+ ../../../src/core/utils.hpp /usr/include/tcl.h /usr/include/tclDecls.h \
+ /usr/include/tclPlatDecls.h ../../../src/core/grid.hpp \
+ /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -183,9 +182,7 @@ nemd_tcl.lo: ../../../src/tcl/nemd_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/tcl/parser.hpp:
 

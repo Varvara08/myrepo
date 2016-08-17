@@ -40,9 +40,8 @@ halo.lo: ../../../src/core/halo.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/lattice.hpp ../../../src/core/halo.hpp
+ ../../../src/core/mpifake/mpi.h ../../../src/core/lattice.hpp \
+ ../../../src/core/halo.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -196,9 +195,7 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/lattice.hpp:
 

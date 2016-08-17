@@ -45,7 +45,7 @@ end // for s
 [m,n]=size(w);
 // Initial condition
 for z=1:2*np+1
-  gf(1,z)=w(z)*lambda;
+  gf(1,z)=w(z);
 end // for z
 
 // Start recurrence
@@ -101,9 +101,9 @@ for z=1:np
     pbp(z)=gt(np,z)*(gf(np+1,z)/w(z))^q;
     Zn = Zn + pbp(z);
 end // for z
-for z=1:np
-    pbp(z)=pbp(z)/Zn;
-end // for z
+//for z=1:np
+//    pbp(z)=pbp(z)/Zn;
+//end // for z
 endfunction
 
 // --------------------------------------------------------------------------
@@ -118,9 +118,9 @@ for z=1:2*np+1
     end
     Zn = Zn + ends(z);
 end // for z
-for z=1:2*np+1
-    ends(z)=ends(z)/Zn;
-end // for z
+//for z=1:2*np+1
+//    ends(z)=ends(z)/Zn;
+//end // for z
 endfunction
 
 // --------------------------------------------------------------------------
@@ -140,15 +140,18 @@ lambda=0.16666666667; // 1/6
 np=100; // number of units in the brush
 q=2;
 f=q+1;
-sig=300;
-//h2n=0.75;
+sig=950; // for output.file name
+M = 256; // for output.file name
+h2n=0.75; 
 //  Opening ---> calculation potention
 //s0 = '~/imc/StarBrush/Neutral/Poty/f2/' ;
-s0 = '~/imc/StarBrush/Neutral/Poty/f3/';
+s0 = '~/imc/StarBrush/Neutral/Poty/simpleFiles/';
 //s = s0 +'V1_h2n'+string(h2n)+'_f2_sig0.9.dat';
 //s = s0 +'h2n'+string(h2n)+'_mod_z_V*.dat';
 //s = s0 +'CSBrush_den7_300.pro';
-s = s0 +'sfbox_f3_'+string(sig)+'.dat';
+s = s0 +'sfbox_f3_100.dat';
+//s = s0 +'sfbox_f2_'+string(sig)+'_man_minus_cutted_h2n'+string(h2n)+'_'+string(M)+'.dat';
+//s = s0 +'test1.dat';
 //s = s0 +'VV.dat';
 //s = s0 +'ft5_mod.dat';
 a=fscanfMat(s);
@@ -182,21 +185,21 @@ end // for k
 //
 // Write data into file
 f=q+1;
-s = s0 + 'check_sig'+string(sig)+'_z_pbp_pe_V1_np' + string(np) + '.dat';
+s = s0 + 'output_h2n'+string(h2n)+'_f2_sig'+string(sig)+'_z_pbp_pe_V1_np' + string(np) + '_'+string(M)+'.dat';
 u=file('open',s,'unknown');
 write(u, res, '(1(f14.8), 32(e16.8))');
 file('close',u);
 //
 // Plot
-subplot(1,3,1); plot(res(:,1),res(:,2),'-r')
+subplot(1,3,1); plot(res(:,1),res(:,2),'-g')
 xlabel('z')
 ylabel('pbp(z)')
 
-subplot(1,3,2); plot(res(:,1),res(:,3),'-r')
+subplot(1,3,2); plot(res(:,1),res(:,3),'-g')
 xlabel('z')
 ylabel('ends(z)')
 
-subplot(1,3,3); plot(res(:,1),res(:,4),'-r')
+subplot(1,3,3); plot(res(:,1),res(:,4),'-g')
 xlabel('z')
 ylabel('V(z)')
 

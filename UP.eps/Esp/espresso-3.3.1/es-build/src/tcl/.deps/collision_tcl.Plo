@@ -41,12 +41,11 @@ collision_tcl.lo: ../../../src/tcl/collision_tcl.cpp \
  ../../../src/core/virtual_sites.hpp ../../../src/core/integrate.hpp \
  ../../../src/core/virtual_sites.hpp ../../../src/core/integrate.hpp \
  ../../../src/core/cells.hpp ../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/verlet.hpp ../../../src/core/communication.hpp \
- ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- ../../../src/tcl/parser.hpp ../../../src/core/utils.hpp \
- /usr/include/tcl.h /usr/include/tclDecls.h /usr/include/tclPlatDecls.h
+ ../../../src/core/mpifake/mpi.h ../../../src/core/verlet.hpp \
+ ../../../src/core/communication.hpp ../../../src/core/random.hpp \
+ ../../../src/core/topology.hpp ../../../src/tcl/parser.hpp \
+ ../../../src/core/utils.hpp /usr/include/tcl.h /usr/include/tclDecls.h \
+ /usr/include/tclPlatDecls.h
 
 /usr/include/stdc-predef.h:
 
@@ -198,9 +197,7 @@ collision_tcl.lo: ../../../src/tcl/collision_tcl.cpp \
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

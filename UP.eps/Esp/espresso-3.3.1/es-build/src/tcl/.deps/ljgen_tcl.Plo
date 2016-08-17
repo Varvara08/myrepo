@@ -40,8 +40,7 @@ ljgen_tcl.lo: ../../../src/tcl/ljgen_tcl.cpp /usr/include/stdc-predef.h \
  ../../../src/tcl/parser.hpp ../../../src/core/utils.hpp \
  /usr/include/tcl.h /usr/include/tclDecls.h /usr/include/tclPlatDecls.h \
  ../../../src/core/communication.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -197,6 +196,4 @@ ljgen_tcl.lo: ../../../src/tcl/ljgen_tcl.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

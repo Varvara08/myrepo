@@ -15,8 +15,15 @@ fft-common.lo: ../../../src/core/fft-common.cpp \
  /usr/include/c++/4.8/x86_64-suse-linux/bits/os_defines.h \
  /usr/include/c++/4.8/x86_64-suse-linux/bits/cpu_defines.h \
  /usr/include/string.h /usr/include/xlocale.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/mpifake/mpi.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
  ../../../src/core/utils.hpp /usr/include/c++/4.8/cmath \
  /usr/include/c++/4.8/bits/cpp_type_traits.h \
  /usr/include/c++/4.8/ext/type_traits.h /usr/include/math.h \
@@ -25,18 +32,9 @@ fft-common.lo: ../../../src/core/fft-common.cpp \
  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
  /usr/include/c++/4.8/cstdio /usr/include/c++/4.8/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/endian.h \
- /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
- /usr/include/bits/byteswap-16.h /usr/include/sys/types.h \
- /usr/include/time.h /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
- /usr/include/bits/stdlib-float.h ../../../src/core/debug.hpp \
- ../../../src/core/errorhandling.hpp ../../../src/core/communication.hpp \
- ../../../src/core/particle_data.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp
+ ../../../src/core/debug.hpp ../../../src/core/errorhandling.hpp \
+ ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
+ ../../../src/core/random.hpp ../../../src/core/topology.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -96,39 +94,7 @@ config-features.hpp:
 
 /usr/include/xlocale.h:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
-
-../../../src/core/utils.hpp:
-
-/usr/include/c++/4.8/cmath:
-
-/usr/include/c++/4.8/bits/cpp_type_traits.h:
-
-/usr/include/c++/4.8/ext/type_traits.h:
-
-/usr/include/math.h:
-
-/usr/include/bits/huge_val.h:
-
-/usr/include/bits/huge_valf.h:
-
-/usr/include/bits/huge_vall.h:
-
-/usr/include/bits/inf.h:
-
-/usr/include/bits/nan.h:
-
-/usr/include/bits/mathdef.h:
-
-/usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathinline.h:
-
-/usr/include/c++/4.8/cstdio:
-
-/usr/include/c++/4.8/cstdlib:
+../../../src/core/mpifake/mpi.h:
 
 /usr/include/stdlib.h:
 
@@ -165,6 +131,36 @@ config-features.hpp:
 /usr/include/bits/stdlib-bsearch.h:
 
 /usr/include/bits/stdlib-float.h:
+
+../../../src/core/utils.hpp:
+
+/usr/include/c++/4.8/cmath:
+
+/usr/include/c++/4.8/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.8/ext/type_traits.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/c++/4.8/cstdio:
+
+/usr/include/c++/4.8/cstdlib:
 
 ../../../src/core/debug.hpp:
 

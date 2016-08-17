@@ -41,8 +41,7 @@ object-in-fluid/volume_force_tcl.lo: \
  ../../../src/core/particle_data.hpp \
  ../../../src/core/object-in-fluid/volume_force.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/cells.hpp \
- ../../../src/core/ghosts.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
+ ../../../src/core/ghosts.hpp ../../../src/core/mpifake/mpi.h \
  ../../../src/core/verlet.hpp ../../../src/core/lb.hpp \
  ../../../src/core/lattice_inline.hpp ../../../src/core/lattice.hpp \
  ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
@@ -203,9 +202,7 @@ object-in-fluid/volume_force_tcl.lo: \
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 

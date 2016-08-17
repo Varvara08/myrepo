@@ -34,8 +34,7 @@ forcecap.lo: ../../../src/core/forcecap.cpp /usr/include/stdc-predef.h \
  ../../../src/core/config.hpp ../../src/acconfig.hpp myconfig-final.hpp \
  config-features.hpp ../../../src/core/debug.hpp \
  ../../../src/core/errorhandling.hpp ../../../src/core/random.hpp \
- ../../../src/core/topology.hpp /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/topology.hpp ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -171,6 +170,4 @@ config-features.hpp:
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

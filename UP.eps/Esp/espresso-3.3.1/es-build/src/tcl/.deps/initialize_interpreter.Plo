@@ -71,9 +71,8 @@ initialize_interpreter.lo: ../../../src/tcl/initialize_interpreter.cpp \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/tuning.hpp ../../../src/tcl/electrokinetics_tcl.hpp \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/tuning.hpp \
+ ../../../src/tcl/electrokinetics_tcl.hpp \
  ../../../src/tcl/actor/HarmonicWell_tcl.hpp ../../../src/tcl/parser.hpp
 
 /usr/include/stdc-predef.h:
@@ -326,9 +325,7 @@ initialize_interpreter.lo: ../../../src/tcl/initialize_interpreter.cpp \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/tuning.hpp:
 

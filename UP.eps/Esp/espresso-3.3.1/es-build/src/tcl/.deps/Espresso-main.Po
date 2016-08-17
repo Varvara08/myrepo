@@ -36,8 +36,7 @@ Espresso-main.o: ../../../src/tcl/main.cpp /usr/include/stdc-predef.h \
  ../../../src/core/initialize.hpp ../../../src/core/communication.hpp \
  ../../../src/core/particle_data.hpp ../../../src/core/utils.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
+ ../../../src/core/mpifake/mpi.h
 
 /usr/include/stdc-predef.h:
 
@@ -181,6 +180,4 @@ Espresso-main.o: ../../../src/tcl/main.cpp /usr/include/stdc-predef.h \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:

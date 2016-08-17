@@ -48,9 +48,8 @@ statistics_observable_tcl.lo: \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  ../../../src/core/communication.hpp ../../../src/core/particle_data.hpp \
  ../../../src/core/random.hpp ../../../src/core/topology.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/lbgpu.hpp ../../../src/core/statistics_observable.hpp \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/lbgpu.hpp \
+ ../../../src/core/statistics_observable.hpp \
  ../../../src/core/pressure.hpp ../../../src/core/integrate.hpp \
  ../../../src/core/statistics.hpp ../../../src/core/interaction_data.hpp \
  ../../../src/core/thermostat.hpp ../../../src/core/global.hpp \
@@ -307,9 +306,7 @@ statistics_observable_tcl.lo: \
 
 ../../../src/core/topology.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/lbgpu.hpp:
 

@@ -38,11 +38,10 @@ energy.lo: ../../../src/core/energy.cpp /usr/include/stdc-predef.h \
  ../../../src/core/thermostat.hpp ../../../src/core/random.hpp \
  ../../../src/core/global.hpp ../../../src/core/integrate.hpp \
  ../../../src/core/cells.hpp ../../../src/core/ghosts.hpp \
- /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
- /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h \
- ../../../src/core/verlet.hpp ../../../src/core/lb.hpp \
- ../../../src/core/lattice_inline.hpp ../../../src/core/lattice.hpp \
- ../../../src/core/grid.hpp /usr/include/c++/4.8/climits \
+ ../../../src/core/mpifake/mpi.h ../../../src/core/verlet.hpp \
+ ../../../src/core/lb.hpp ../../../src/core/lattice_inline.hpp \
+ ../../../src/core/lattice.hpp ../../../src/core/grid.hpp \
+ /usr/include/c++/4.8/climits \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/limits.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -258,9 +257,7 @@ config-features.hpp:
 
 ../../../src/core/ghosts.hpp:
 
-/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
-
-/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
+../../../src/core/mpifake/mpi.h:
 
 ../../../src/core/verlet.hpp:
 
