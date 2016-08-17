@@ -5,7 +5,7 @@ execfile('brush_potention_class.py')
 #mypath = '/home/alexander/imc/StarBrush/ph-sensitive/flatbrush/'
 mypath = '/Users/varvara/Documents/IMC/ph-sensitive/' 
 #mylist = [220] #np.arange(200,550,50)
-mylist = np.arange(0.001,0.3,0.01)
+mylist = np.arange(0.001,0.66,0.01)
 #mylist = np.arange(0.25,0.8,0.25)
 #mylist2= np.arange(1,2,1)
 
@@ -62,5 +62,5 @@ for vary_parameter in mylist:
  b.plotAvDis()
  #g.Save(mypath+'data/'+b.fname+'.vsz')
 # os.chdir('/home/alexander/mygit/UP/python')
- os.chdir('/Users/varvara/mygit/UP.eps/python')
+ os.chdir('/Users/varvara/mygit/Programm/mix_brush')
  line_color_num+=1

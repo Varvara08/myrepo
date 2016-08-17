@@ -15,7 +15,7 @@ from io import StringIO
 ###
 os.chdir('/Users/varvara/Documents/veusz.embed')
 import veusz.embed as veusz
-os.chdir('/Users/varvara/mygit/UP.eps/python')
+os.chdir('/Users/varvara/mygit/Programm/mix_brush')
 ###
 execfile("functions.py")
 
